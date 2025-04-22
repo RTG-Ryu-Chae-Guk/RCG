@@ -37,7 +37,7 @@ public class JwtFilter extends OncePerRequestFilter {
             }
         }
 
-        // ✅ 항상 요청은 다음 필터로 넘겨야 Swagger도 동작합니다!
+
         filterChain.doFilter(request, response);
 
     }

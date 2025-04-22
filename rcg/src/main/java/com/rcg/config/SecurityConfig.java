@@ -29,9 +29,9 @@ public class SecurityConfig {
                                 "/swagger-ui.html",
                                 "/api/sms/**",
                                 "/auth/**",
-                                "/api/status/**" // ✅ 인증 없이 접근 가능
+                                "/api/status/**"
                         ).permitAll()
-                        .requestMatchers("/api/posts/**", "/api/comments/**").authenticated() // ✅ 게시판만 인증 필요
+                        .requestMatchers("/api/posts/**", "/api/comments/**").authenticated()
                         .anyRequest().permitAll() // 기타 모든 경로는 인증 없이 허용
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
